@@ -3,7 +3,6 @@
 namespace App;
 
 use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\Question;
@@ -33,7 +32,7 @@ class HandleUserData extends Command
             'Ваш пол (м): ',
             ['М', 'Ж'],
             0
-        );
+        );        
         $question->setErrorMessage('Пол указан не верно!');
         $userSex = $helper->ask($input, $output, $question);
 
