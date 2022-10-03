@@ -2,7 +2,6 @@
 
 namespace App;
 
-use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -23,9 +22,11 @@ class PrintStringMultiple extends Command
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $times = $input->getArgument('timesToPrint') ? $input->getArgument('timesToPrint') : 2;
+
         for ($i = 1; $i <= $times; $i++) {
             $output->writeln($input->getArgument('printString'));
         }
+
         return Command::SUCCESS;
     }
 }
